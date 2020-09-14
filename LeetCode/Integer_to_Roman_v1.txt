@@ -1,0 +1,268 @@
+class Solution {
+public:
+    string intToRoman(int num) {
+        int count = 0, st = 0, iter = 0; float k = 1000;
+        int nmb = 0;
+        int tmp = num;
+        string output;
+        while (tmp != 0) {
+            nmb++;
+            tmp /= 10;
+        }
+        st = nmb;
+        for (int i = 0; i < 4 - st; ++i) {
+            k /= 10;
+        }
+        tmp = num;
+        tmp /= k;
+        for(int i =0;i<nmb;++i) {
+            switch (tmp) {
+            case 0: {
+                tmp = num - tmp * k;
+                num %= (int)k;
+                k /= 10;
+                st--;
+                tmp /= k;
+                break;
+            }
+            case 1: {
+                switch (st) {
+                case 1: {
+                    output.append("I");
+                    break;
+                }
+                case 2: {
+                    output.append("X");
+                    break;
+                }
+                case 3: {
+                    output.append("C");
+                    break;
+                }
+                case 4: {
+                    output.append("M");
+                    break;
+                }
+                }
+                tmp = num - tmp * k;
+                num %= (int)k;
+                k /= 10;
+                st--;
+                tmp /= k;
+                break;
+            }
+            case 2: {
+                switch (st) {
+                case 1: {
+                    
+                    output.append("II");
+                    break;
+                }
+                case 2: {
+                    
+                    output.append("XX");
+                    break;
+                }
+                case 3: {
+                    
+                    output.append("CC");
+                    break;
+                }
+                case 4: {
+                    
+                    output.append("MM");
+                    break;
+                }
+                }
+                tmp = num - tmp * k;
+                num %= (int)k;
+                k /= 10;
+                st--;
+                tmp /= k;
+                break;
+            }
+            case 3: {
+                switch (st) {
+                case 1: {
+                    
+                    output.append("III");
+                    break;
+                }
+                case 2: {
+                    
+                    output.append("XXX");
+                    break;
+                }
+                case 3: {
+                    
+                    output.append("CCC");
+                    break;
+                }
+                case 4: {
+                    
+                    output.append("MMM");
+                    break;
+                }
+                }
+                tmp = num - tmp * k;
+                num %= (int)k;
+                k /= 10;
+                st--;
+                tmp /= k;
+                break;
+            }
+            case 4: {
+                switch (st) {
+                case 1: {
+                    
+                    output.append("IV");
+                    break;
+                }
+                case 2: {
+                    
+                    output.append("XL");
+                    break;
+                }
+                case 3: {
+                    
+                    output.append("CD");
+                    break;
+                }
+                }
+                tmp = num - tmp * k;
+                num %= (int)k;
+                k /= 10;
+                st--;
+                tmp /= k;
+                break;
+            }
+            case 5: {
+                switch (st) {
+                case 1: {
+                    
+                    output.append("V");
+                    break;
+                }
+                case 2: {
+                    
+                    output.append("L");
+                    break;
+                }
+                case 3: {
+                    
+                    output.append("D");
+                    break;
+                }
+                }
+                tmp = num - tmp * k;
+                num %= (int)k;
+                k /= 10;
+                st--;
+                tmp /= k;
+                break;
+            }
+            case 6: {
+                switch (st) {
+                case 1: {
+                    
+                    output.append("VI");
+                    break;
+                }
+                case 2: {
+                    
+                    output.append("LX");
+                    break;
+                }
+                case 3: {
+                    
+                    output.append("DC");
+                    break;
+                }
+                }
+                tmp = num - tmp * k;
+                num %= (int)k;
+                k /= 10;
+                st--;
+                tmp /= k;
+                break;
+            }
+            case 7: {
+                switch (st) {
+                case 1: {
+                    
+                    output.append("VII");
+                    break;
+                }
+                case 2: {
+                    
+                    output.append("LXX");
+                    break;
+                }
+                case 3: {
+                    
+                    output.append("DCC");
+                    break;
+                }
+                }
+                tmp = num - tmp * k;
+                num %= (int)k;
+                k /= 10;
+                st--;
+                tmp /= k;
+                break;
+            }
+            case 8: {
+                switch (st) {
+                case 1: {
+                    
+                    output.append("VIII");
+                    break;
+                }
+                case 2: {
+                    
+                    output.append("LXXX");
+                    break;
+                }
+                case 3: {
+                    
+                    output.append("DCCC");
+                    break;
+                }
+                }
+                tmp = num - tmp * k;
+                num %= (int)k;
+                k /= 10;
+                st--;
+                tmp /= k;
+                break;
+            }
+            case 9: {
+                switch (st) {
+                case 1: {
+                    
+                    output.append("IX");
+                    break;
+                }
+                case 2: {
+                    
+                    output.append("XC");
+                    break;
+                }
+                case 3: {
+                    
+                    output.append("CM");
+                    break;
+                }
+                }
+                tmp = num - tmp * k;
+                num %= (int)k;
+                k /= 10;
+                st--;
+                tmp /= k;
+                break;
+            }
+            }
+        }
+        return output;
+    }
+};
