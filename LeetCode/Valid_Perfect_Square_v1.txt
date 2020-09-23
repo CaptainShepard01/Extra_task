@@ -1,7 +1,0 @@
-class Solution {
-public:
-    bool isPerfectSquare(int num) {
-        if((double)sqrt(num)==(int)sqrt(num))return 1;
-        return 0;
-    }
-};
